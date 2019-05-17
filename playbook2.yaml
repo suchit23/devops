@@ -1,0 +1,9 @@
+---
+- hosts: servers
+  become: true
+  gather_facts: false
+  tasks:
+  - name: copy file
+    copy: src=/root/test.sh dest=/root
+  - name: exec
+    command: bash /root/test.sh

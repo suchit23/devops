@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: true
+  become_user: root
+  tasks:
+  - name: copy file
+    copy: src=/root/dep.yaml dest=/root
+  - name: create become_user
+    user: name=sp2 password=hrishita

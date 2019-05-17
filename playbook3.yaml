@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: true
+  gather_facts: false
+  tasks:
+  - name: apt
+    apt: name=git state=present
+  - name: apt
+    apt: name=htop state=latest

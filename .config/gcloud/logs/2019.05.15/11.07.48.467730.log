@@ -1,0 +1,27 @@
+2019-05-15 11:07:48,476 DEBUG    root            Loaded Command Group: [u'gcloud', u'container']
+2019-05-15 11:07:48,549 DEBUG    root            Loaded Command Group: [u'gcloud', u'container', u'clusters']
+2019-05-15 11:07:48,556 DEBUG    root            Loaded Command Group: [u'gcloud', u'container', u'clusters', u'create']
+2019-05-15 11:07:48,724 DEBUG    root            Running [gcloud.container.clusters.create] with arguments: [--zone: "asia-south1-c", NAME: "k8s-cluster"]
+2019-05-15 11:07:48,759 WARNING  root            Accessing a Kubernetes Engine cluster requires the kubernetes commandline
+client [kubectl]. To install, run
+  $ gcloud components install kubectl
+
+2019-05-15 11:07:48,762 WARNING  root            Starting in 1.12, new clusters will have basic authentication disabled by default. Basic authentication can be enabled (or disabled) manually using the `--[no-]enable-basic-auth` flag.
+2019-05-15 11:07:48,762 WARNING  root            Starting in 1.12, new clusters will not have a client certificate issued. You can manually enable (or disable) the issuance of the client certificate using the `--[no-]issue-client-certificate` flag.
+2019-05-15 11:07:48,762 WARNING  root            Currently VPC-native is not the default mode during cluster creation. In the future, this will become the default mode and can be disabled using `--no-enable-ip-alias` flag. Use `--[no-]enable-ip-alias` flag to suppress this warning.
+2019-05-15 11:07:48,763 INFO     ___FILE_ONLY___ This will enable the autorepair feature for nodes. Please see
+https://cloud.google.com/kubernetes-engine/docs/node-auto-repair for more
+information on node autorepairs.
+
+
+2019-05-15 11:07:48,763 WARNING  root            Starting in Kubernetes v1.10, new clusters will no longer get compute-rw and storage-ro scopes added to what is specified in --scopes (though the latter will remain included in the default --scopes). To use these scopes, add them explicitly to --scopes. To use the new behavior, set container/new_scopes_behavior property (gcloud config set container/new_scopes_behavior true).
+2019-05-15 11:07:50,331 DEBUG    root            (gcloud.container.clusters.create) ResponseError: code=403, message=Kubernetes Engine API is not enabled for this project. Please ensure it is enabled in Google Cloud Console and try again: visit https://console.cloud.google.com/apis/api/container.googleapis.com/overview?project=sp-devops to do so.
+Traceback (most recent call last):
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 848, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 770, in Run
+    resources = command_instance.Run(args)
+  File "/usr/lib/google-cloud-sdk/lib/surface/container/clusters/create.py", line 356, in Run
+    raise exceptions.HttpException(error, util.HTTP_ERROR_FORMAT)
+HttpException: ResponseError: code=403, message=Kubernetes Engine API is not enabled for this project. Please ensure it is enabled in Google Cloud Console and try again: visit https://console.cloud.google.com/apis/api/container.googleapis.com/overview?project=sp-devops to do so.
+2019-05-15 11:07:50,409 ERROR    root            (gcloud.container.clusters.create) ResponseError: code=403, message=Kubernetes Engine API is not enabled for this project. Please ensure it is enabled in Google Cloud Console and try again: visit https://console.cloud.google.com/apis/api/container.googleapis.com/overview?project=sp-devops to do so.
